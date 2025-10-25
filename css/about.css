@@ -624,3 +624,76 @@ textarea {
     width: 220px;  /* Adjusted to match reference size */
     height: auto;
   }
+
+   @media (max-width: 1024px) {
+    .form-container {
+      width: 90%;
+      padding: 30px 40px;
+    }
+
+    .form-group label {
+      width: 150px;
+      font-size: 16px;
+    }
+
+    .image-decor img {
+      width: 180px;
+    }
+  }
+
+  /* Small devices (phones in landscape / small tablets) */
+  @media (max-width: 768px) {
+    .form-container {
+      width: 95%;
+      padding: 30px;
+    }
+
+    .form-group {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .form-group label {
+      width: 100%;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .form-group input {
+      width: 100%;
+    }
+
+    .image-decor {
+      position: relative;
+      margin-top: 20px;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .image-decor img {
+      width: 180px;
+    }
+  }
+
+  /* Extra small devices (phones portrait) */
+  @media (max-width: 480px) {
+    .form-container {
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    .form-group label {
+      font-size: 15px;
+    }
+
+    .form-group input {
+      font-size: 14px;
+    }
+
+    .image-decor img {
+      width: 150px;
+    }
+  }
