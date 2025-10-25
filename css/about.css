@@ -578,3 +578,49 @@ textarea {
     width: 100%;
   }
 }
+
+ .form-container {
+    position: relative;
+    background-color: #e8963a;
+    padding: 25px 70px;
+    border-radius: 20px;
+    width: 950px; /* stretched width */
+    box-sizing: border-box;
+  }
+
+  /* Input rows */
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  .form-group label {
+    width: 180px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #2b2b2b;
+  }
+
+  .form-group input {
+    flex: 1;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: transparent;
+    outline: none;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  /* Image section inside the orange box */
+  .image-decor {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    z-index: 1;
+  }
+
+  .image-decor img {
+    width: 220px;  /* Adjusted to match reference size */
+    height: auto;
+  }
