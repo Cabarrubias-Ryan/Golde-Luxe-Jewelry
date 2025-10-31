@@ -166,13 +166,6 @@ main {
   text-align: center;
 }
 
-.content-image {
-  width: 100%;
-  max-width: 370px;
-  height: auto;
-  border-radius: 10px;
-}
-
 /* FOOTER */
 footer {
   background-color: #FFDBB6;
