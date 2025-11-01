@@ -189,7 +189,13 @@
         };
 
         try {
-          const res = await fetch('http://localhost:3000/send-order', {
+        // determine API base: when served from the backend use same origin, when
+        // opened as file or developing locally use localhost:3000
+        const apiBase = (window.location.protocol === 'file:')
+          ? 'http://localhost:3000'
+          : window.location.origin;
+
+        const res = await fetch(apiBase + '/send-order', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
