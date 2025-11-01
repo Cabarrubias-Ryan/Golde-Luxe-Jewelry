@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golde Luxe Jewelry - Video</title>
+    <style>
+        :root{
+            --card-bg: #ffffff;
+            --page-bg: #f5f6f7;
+            --card-shadow: 0 6px 20px rgba(22,22,22,0.08);
+            --accent: #b8860b;
+        }
+        html,body{height:100%;}
+        body{
+            margin:0;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            background:var(--page-bg);
+            color:#111;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:2rem;
+        }
+
+        .container{
+            width:100%;
+            max-width:980px;
+            padding:0 1rem;
+        }
+
+        .video-card{
+            background:var(--card-bg);
+            border-radius:12px;
+            box-shadow:var(--card-shadow);
+            overflow:hidden;
+            display:flex;
+            flex-direction:column;
+        }
+
+        .video-media{position:relative;background:#000}
+        .video-media video{
+            width:100%;
+            height:100%;
+            display:block;
+            aspect-ratio:16/9;
+            max-height:70vh;
+            object-fit:cover;
+        }
+
+        .card-body{padding:1rem 1.25rem}
+        .title{font-size:1.25rem;margin:0 0 .25rem}
+        .description{margin:0;color:#555;font-size:0.95rem;line-height:1.4}
+
+        .controls{display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap}
+        .btn{background:var(--accent);color:#fff;padding:.5rem .75rem;border-radius:8px;border:none;cursor:pointer;font-weight:600}
+
+        @media (max-width:640px){
+            body{padding:1rem}
+            .title{font-size:1.05rem}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="video-card" role="region" aria-label="Golde Luxe Jewelry product video">
+            <div class="video-media">
+                <video src="../img/Video.MOV" controls aria-label="Product video">
+                    Your browser does not support the video element.
+                </video>
+            </div>
+            <div class="card-body">
+                <h2 class="title">Golde Luxe Jewelry — Product Showcase</h2>
+                <p class="description">
+                Experience the brilliance of Golde Luxe Jewelry in this exclusive showcase. 
+                Discover our exquisite craftsmanship, elegant designs, and timeless beauty that define every piece we create. 
+                Each jewel is meticulously crafted to reflect sophistication and luxury, making every moment shine brighter. 
+                From delicate necklaces to radiant rings, our collection embodies elegance that transcends trends and celebrates individuality.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        const vid = document.querySelector('.video-media video');
+        function playPause(){ if(!vid) return; if(vid.paused) vid.play(); else vid.pause(); }
+        function toggleMute(){ if(!vid) return; vid.muted = !vid.muted; }
+    </script>
+</body>
+</html>

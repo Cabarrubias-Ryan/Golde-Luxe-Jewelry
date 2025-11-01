@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Golde Luxe Jewelry - Site Map</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  />
+
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #fff7ec, #f7c27f);
+      color: #3a2b1d;
+    }
+
+    .v-line {
+      width: 2px;
+      height: 45px;
+      background-color: #c47a24;
+      margin: 0 auto;
+    }
+
+    /* horizontal connector line under HOME (only on desktop) */
+    .h-line {
+      position: relative;
+      width: 91%;
+      height: 2px;
+      background-color: #c47a24;
+      margin: 0 auto;
+      top: 0;
+    }
+
+    /* short vertical line on each box top */
+    .box::before {
+      content: "";
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 30px;
+      background-color: #c47a24;
+    }
+
+    @media (max-width: 468px) {
+      .h-line {
+        display: none;
+      }
+      .box::before {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body
+  class="font-sans min-h-screen flex flex-col items-center py-10 text-gray-800"
+>
+  <!-- Title -->
+  <div class="text-center mb-8">
+    <h1 class="text-[#c47a24] font-semibold text-lg">Site Map</h1>
+    <h2 class="text-4xl font-bold tracking-wide">GOLDE LUXE JEWELRY</h2>
+  </div>
+
+  <!-- HOME PAGE -->
+  <div
+    class="bg-[#f3a94d] text-white px-10 py-4 rounded-xl shadow-md mb-2 hover:bg-[#e8963a] cursor-pointer transition font-semibold flex items-center gap-2"
+    onclick="navigate('home')"
+  >
+    <i class="fa-solid fa-house"></i>
+    <span>HOME PAGE</span>
+  </div>
+
+  <!-- Vertical line down from HOME -->
+  <div class="v-line"></div>
+
+  <!-- Horizontal connector (desktop only) -->
+  <div class="hidden md:block w-10/12 relative mb-6">
+    <div class="h-line"></div>
+  </div>
+
+  <!-- Main Boxes -->
+  <div
+    class="w-11/12 max-w-6xl grid md:grid-cols-5 sm:grid-cols-2 grid-cols-1 gap-6 text-center relative"
+  >
+    <!-- ABOUT US -->
+    <div
+      class="bg-[#d89c63] rounded-2xl p-5 shadow-lg hover:-translate-y-1 transition box relative"
+    >
+      <div class="text-[#5e3716] mb-2 text-2xl">
+        <i class="fa-solid fa-circle-info"></i>
+      </div>
+      <h3 class="font-bold mb-4 text-white tracking-wide">ABOUT US</h3>
+      <ul class="space-y-2">
+        <li>
+          <a
+            href="#"
+            data-link="history"
+            class="block bg-[#f3a94d] text-white py-2 rounded-md hover:bg-[#e8963a]"
+            >History</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            data-link="funfacts"
+            class="block bg-[#f3a94d] text-white py-2 rounded-md hover:bg-[#e8963a]"
+            >Fun Facts</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            data-link="whyus"
+            class="block bg-[#f3a94d] text-white py-2 rounded-md hover:bg-[#e8963a]"
+            >Why Choose Us?</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            data-link="care"
+            class="block bg-[#f3a94d] text-white py-2 rounded-md hover:bg-[#e8963a]"
+            >Jewelry Care</a
+          >
+        </li>
+         <li>
+          <a
+            href="#"
+            data-link="media"
+            class="block bg-[#f3a94d] text-white py-2 rounded-md hover:bg-[#e8963a]"
+            >Resources and Media</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- INFO -->
+    <div
+      class="bg-[#d89c63] rounded-2xl p-5 shadow-lg hover:-translate-y-1 transition box relative"
+    >
+      <div class="text-[#5e3716] mb-2 text-2xl">
+        <i class="fa-solid fa-file-lines"></i>
+      </div>
+      <h3 class="font-bold mb-4 text-white tracking-wide">INFO</h3>
+      <ul class="space-y-2">
+        <li>
+          <a
+            href="#"
+            data-link="price"
+            class="block bg-[#f3a94d] text-white py-2 rounded-md hover:bg-[#e8963a]"
+            >Info</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- PRODUCT -->
+    <div
+      class="bg-[#d89c63] rounded-2xl p-5 shadow-lg hover:-translate-y-1 transition box relative"
+    >
+      <div class="text-[#5e3716] mb-2 text-2xl">
+        <i class="fa-solid fa-gift"></i>
+      </div>
+      <h3 class="font-bold mb-4 text-white tracking-wide">PRODUCT</h3>
+      <ul class="space-y-2">
+        <li>
+          <a
+            href="#"
+            data-link="price"
+            class="block bg-[#f3a94d] text-white py-2 rounded-md hover:bg-[#e8963a]"
+            >Price</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            data-link="sale"
+            class="block bg-[#f3a94d] text-white py-2 rounded-md hover:bg-[#e8963a]"
+            >Sale</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            data-link="new"
+            class="block bg-[#f3a94d] text-white py-2 rounded-md hover:bg-[#e8963a]"
+            >New Arrivals</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            data-link="best"
+            class="block bg-[#f3a94d] text-white py-2 rounded-md hover:bg-[#e8963a]"
+            >Best Sellers</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- ORDER -->
+    <div
+      class="bg-[#d89c63] rounded-2xl p-5 shadow-lg hover:-translate-y-1 transition box relative"
+    >
+      <div class="text-[#5e3716] mb-2 text-2xl">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </div>
+      <h3 class="font-bold mb-4 text-white tracking-wide">ORDER</h3>
+      <ul class="space-y-2">
+        <li>
+          <a
+            href="#"
+            data-link="order"
+            class="block bg-[#f3a94d] text-white py-2 rounded-md hover:bg-[#e8963a]"
+            >Order Now</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            data-link="shipping"
+            class="block bg-[#f3a94d] text-white py-2 rounded-md hover:bg-[#e8963a]"
+            >Shipping</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            data-link="returns"
+            class="block bg-[#f3a94d] text-white py-2 rounded-md hover:bg-[#e8963a]"
+            >Return Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            data-link="warranty"
+            class="block bg-[#f3a94d] text-white py-2 rounded-md hover:bg-[#e8963a]"
+            >Warranty</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            data-link="reviews"
+            class="block bg-[#f3a94d] text-white py-2 rounded-md hover:bg-[#e8963a]"
+            >My Reviews</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            data-link="submit"
+            class="block bg-[#f3a94d] text-white py-2 rounded-md hover:bg-[#e8963a]"
+            >Submit</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- MY ACCOUNT -->
+    <div
+      class="bg-[#d89c63] rounded-2xl p-5 shadow-lg hover:-translate-y-1 transition box relative"
+    >
+      <div class="text-[#5e3716] mb-2 text-2xl">
+        <i class="fa-solid fa-user"></i>
+      </div>
+      <h3 class="font-bold mb-4 text-white tracking-wide">MY ACCOUNT</h3>
+      <ul class="space-y-2">
+        <li>
+          <a
+            href="#"
+            data-link="account"
+            class="block bg-[#f3a94d] text-white py-2 rounded-md hover:bg-[#e8963a]"
+            >Submit</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- JS: Simple link system -->
+  <script>
+    const pageLinks = {
+      home: "main.html",
+      history: "history.html",
+      funfacts: "funfact.html",
+      whyus: "why.html",
+      care: "jewelry.html",
+      media: "resources.html",
+      price: "product.html",
+      sale: "sale.html",
+      new: "new_arrivals.html",
+      best: "best_sellers.html",
+      order: "order.html",
+      shipping: "order_product.html",
+      returns: "return.html",
+      warranty: "warranty.html",
+      reviews: "reviews.html",
+      submit: "order_product.html",
+      account: "account.html",
+      video: "video.html",
+      brochure: "brochure.html",
+      packaging: "packaging.html",
+    };
+
+    function navigate(key) {
+      const link = pageLinks[key];
+      if (link) window.location.href = link;
+    }
+
+    document.querySelectorAll("[data-link]").forEach((el) => {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        navigate(el.getAttribute("data-link"));
+      });
+    });
+  </script>
+</body>
+</html>

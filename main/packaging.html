@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Golde Luxe Jewelry - Packaging</title>
+    <style>
+    :root{--bg:transparent;--card:#fff;--accent:#b8860b;--muted:#6b7280}
+        html,body{height:100%;}
+        body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:var(--bg);color:#07203a;display:flex;align-items:center;justify-content:center;padding:2.25rem}
+        .wrap{width:100%;max-width:1200px;padding:0 1rem}
+        .card{background:var(--card);border-radius:14px;box-shadow:0 12px 30px rgba(10,15,25,0.06);overflow:hidden;border:1px solid rgba(10,15,25,0.04)}
+        .card-head{padding:2rem 2rem 1rem}
+        .title{margin:0;font-size:1.65rem;font-weight:800;letter-spacing:-0.5px}
+        .subtitle{margin:8px 0 0;color:var(--muted);font-size:1rem}
+
+    .hero{display:flex;align-items:center;justify-content:center;padding:1.25rem;background:transparent}
+    .hero .packaging-image{width:auto;max-width:940px;max-height:70vh;display:block;border-radius:10px;box-shadow:0 8px 30px rgba(10,15,25,0.06);object-fit:contain}
+
+        .quote{padding:1.25rem 2rem 2rem;display:flex;flex-direction:column;align-items:center;text-align:center}
+    .quote p{font-size:1.15rem;line-height:1.4;color:#0b1220;margin:0 0 .5rem}
+    .quote cite{display:block;color:var(--muted);font-weight:700}
+
+        @media (max-width:900px){
+            body{padding:1.25rem}
+            .card-head{padding:1.25rem}
+            .title{font-size:1.25rem}
+            .hero .packaging-image{max-width:100%;height:auto;max-height:60vh}
+            .quote p{font-size:1rem}
+        }
+
+        .contact-link{color:var(--accent);text-decoration:none;font-weight:700}
+        .contact-link:hover{text-decoration:underline}
+    </style>
+</head>
+<body>
+    <div class="wrap" style="margin-top: 100px; ">
+        <div role="region" aria-label="Product packaging showcase">
+            <div class="card-head">
+                <h1 class="title">Product Packaging</h1>
+                <div class="subtitle">A refined presentation of our packaging design — front and back shown as one image.</div>
+            </div>
+
+            <div class="hero">
+                <!-- single non-clickable image -->
+                <img class="packaging-image" src="../img/pack.jpeg" alt="Product packaging front and back" loading="lazy">
+            </div>
+
+            <div class="quote">
+                <p>"Adorn yourself with brilliance — crafted details meet timeless elegance."</p>
+                <cite>— Golde Luxe Jewelry</cite>
+            </div>
+
+            <div class="contact-bar" aria-label="Contact information" style="padding:1rem 1.5rem;background:transparent">
+                <div style="max-width:940px;margin:0 auto;display:flex;gap:1rem;align-items:center;justify-content:center;flex-wrap:wrap">
+                    <a class="contact-link" href="mailto:info@goldeluxejewelry.com">luxegolde@gmail.com</a>
+                    <span style="color:var(--muted)">|</span>
+                    <a class="contact-link" href="tel:+09466239333">09466239333</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

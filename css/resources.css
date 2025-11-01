@@ -1,0 +1,97 @@
+.menu-section {
+  max-width: 760px;
+  margin: 60px auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+}
+
+.menu-quote {
+  text-align: center;
+  font-size: 1.3em;
+  font-style: italic;
+  color: #ff6600;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.menu-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+}
+
+.menu-image {
+  flex: 1 1 350px;
+  text-align: center;
+}
+
+.menu-image img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.menu-text {
+  flex: 1 1 450px;
+}
+
+.menu-text h2 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.menu-text p {
+  color: #666;
+  font-size: 1em;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-list li {
+  margin: 10px 0;
+}
+
+.menu-list a {
+  text-decoration: none;
+  color: #0066cc;
+  font-weight: 500;
+  font-size: 1.05em;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.menu-list a:hover {
+  color: #ff6600;
+  transform: translateX(5px);
+}
+
+.menu-list a.secondary {
+  color: #ff6600;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu-text h2 {
+    font-size: 1.6em;
+  }
+
+  .menu-text p {
+    font-size: 0.95em;
+  }
+}

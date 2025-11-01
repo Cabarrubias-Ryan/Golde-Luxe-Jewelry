@@ -1,0 +1,181 @@
+.order-section {
+  flex: 1;
+  padding: 20px;
+}
+
+.order-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-container h1 {
+  text-align: center;
+  color: #b58b4e;
+  margin-bottom: 10px;
+}
+
+.order-container .intro {
+  text-align: center;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.order-container h2 {
+  color: #444;
+  margin-top: 30px;
+  border-left: 5px solid #b58b4e;
+  padding-left: 10px;
+}
+
+.order-container label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.order-container input,
+.order-container select,
+.order-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.order-container textarea {
+  resize: vertical;
+}
+
+.order-container button {
+  width: 100%;
+  padding: 15px;
+  background: #b58b4e;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s;
+}
+
+.order-container button:hover {
+  background: #9e773d;
+}
+.order-container section div input[type="checkbox"] {
+  accent-color: #b58b4e;
+  transform: scale(1.2);
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.order-container section div {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  font-size: 15px;
+  color: #444;
+}
+
+/* Ensure checkboxes are not stretched by the generic input width rule */
+.order-container input[type="checkbox"] {
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px; /* keep spacing */
+}
+
+
+.order-footer {
+  text-align: center;
+  justify-content: center;
+  margin-top: 30px;
+  color: #666;
+  font-size: 14px;
+}
+
+.order-footer a {
+  color: #b58b4e;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Price List Section */
+.price-list {
+  background: #fff8ee;
+  border-left: 4px solid #b58b4e;
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 90%;
+}
+
+.price-list h3 {
+  font-size: 16px;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.price-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #444;
+}
+
+.price-list li {
+  font-size: 15px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.price-list li span {
+  color: #d39c45;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .order-container {
+    padding: 20px;
+  }
+
+  .order-container h1 {
+    font-size: 24px;
+  }
+
+  .order-container h2 {
+    font-size: 18px;
+  }
+
+  .order-container input,
+  .order-container select,
+  .order-container textarea {
+    font-size: 14px;
+  }
+
+  .order-container button {
+    font-size: 15px;
+  }
+
+  .price-list h3 {
+    font-size: 15px;
+  }
+
+  .price-list li {
+    font-size: 14px;
+  }
+}
