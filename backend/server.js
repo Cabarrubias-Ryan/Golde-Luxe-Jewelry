@@ -76,14 +76,25 @@ app.post('/send-order', async (req, res) => {
 			<p><strong>Notes:</strong> ${escapeHtml(notes || '')}</p>
 		`;
 
-		// create transporter for Gmail using App Password
-		const transporter = nodemailer.createTransport({
-			service: 'gmail',
-			auth: {
-				user: process.env.GMAIL_USER,
-				pass: process.env.GMAIL_APP_PASSWORD
-			}
-		});
+			// create transporter for Gmail using App Password
+			// Use explicit SMTP settings and a longer timeout to avoid connection timeouts on some hosts
+			const transporter = nodemailer.createTransport({
+				host: 'smtp.gmail.com',
+				port: 587,
+				secure: false, // use STARTTLS
+				requireTLS: true,
+				auth: {
+					user: process.env.GMAIL_USER,
+					pass: process.env.GMAIL_APP_PASSWORD
+				},
+				tls: {
+					// do not fail on invalid certs for some hosts (optional); remove in production if not needed
+					rejectUnauthorized: false,
+				},
+				connectionTimeout: 30000,
+				greetingTimeout: 30000,
+				socketTimeout: 30000
+			});
 
 		const mailOptions = {
 			from: fromEmail,
@@ -92,14 +103,26 @@ app.post('/send-order', async (req, res) => {
 			html
 		};
 
-		try {
-			if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) throw new Error('GMAIL credentials not configured');
-			await transporter.sendMail(mailOptions);
-			return res.json({ ok: true, message: 'Order sent' });
-		} catch (err) {
-			console.error('Nodemailer error:', err && err.toString());
-			return res.status(500).json({ error: 'Failed to send email', details: err && err.message });
-		}
+			try {
+				if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) throw new Error('GMAIL credentials not configured');
+				// verify connection configuration (will attempt to connect)
+				await transporter.verify();
+				await transporter.sendMail(mailOptions);
+				return res.json({ ok: true, message: 'Order sent' });
+			} catch (err) {
+				console.error('Nodemailer error:', err && err.toString());
+				// give actionable hints for common errors
+				const details = err && err.message ? err.message : String(err);
+				let hint = '';
+				if (details.match(/Timed out|ETIMEDOUT|Connection timeout/)) {
+					hint = 'Connection timed out. Possible causes: outbound SMTP blocked by host, wrong port, or network issues.';
+				} else if (details.match(/Invalid login|EAUTH/)) {
+					hint = 'Authentication failed. Check GMAIL_USER and GMAIL_APP_PASSWORD (use an App Password with 2FA enabled).';
+				} else if (details.match(/self signed certificate|UNABLE_TO_VERIFY_LEAF_SIGNATURE/)) {
+					hint = 'TLS certificate verification failed. Consider enabling proper TLS or set rejectUnauthorized appropriately.';
+				}
+				return res.status(500).json({ error: 'Failed to send email', details, hint });
+			}
 });
 
 app.listen(PORT, () => {
