@@ -17,6 +17,9 @@ app.use(express.json());
 // Serve static frontend from the repo's `main/` folder so the site root shows the website
 const staticDir = path.join(__dirname, '..', 'main');
 app.use(express.static(staticDir));
+// Serve shared static assets (css, img) that live beside `main/`
+app.use('/css', express.static(path.join(__dirname, '..', 'css')));
+app.use('/img', express.static(path.join(__dirname, '..', 'img')));
 
 // Keep a JSON status endpoint for health checks
 app.get('/api/status', (req, res) => {
