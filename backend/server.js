@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
 
+const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -13,8 +14,18 @@ if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) {
 app.use(cors());
 app.use(express.json());
 
-app.get('/', (req, res) => {
+// Serve static frontend from the repo's `main/` folder so the site root shows the website
+const staticDir = path.join(__dirname, '..', 'main');
+app.use(express.static(staticDir));
+
+// Keep a JSON status endpoint for health checks
+app.get('/api/status', (req, res) => {
 	res.json({ status: 'ok', message: 'Golde Luxe backend running' });
+});
+
+// Serve the main page for root and any unknown routes (SPA-friendly)
+app.get('/', (req, res) => {
+	res.sendFile(path.join(staticDir, 'main.html'));
 });
 
 /**
